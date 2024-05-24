@@ -18,11 +18,15 @@ const Card: React.FC<CardProps> = ({id, name, image, price, rating, votes, popul
     return (
         <div className={styles.container}>
             <img 
-                className={styles.name} 
+                className={styles.img} 
                 src={image} 
                 alt="product photo" 
                 loading='lazy'
             />
+            
+            {popular ?
+                (<div className={styles.popular}>Popular</div>) : null
+            }
             <div className={styles.info_container}>
                 <div className={styles.heading}>
                     <div className={styles.name}>{name}</div>
@@ -31,23 +35,35 @@ const Card: React.FC<CardProps> = ({id, name, image, price, rating, votes, popul
                 <div className={styles.info}>
                     {rating === null ?
                         (<>
-                            <img 
-                                className={styles.rating_icon} 
-                                src={star_fill_icon} 
-                                alt="star_icon" 
-                                loading='lazy'
-                            />
-                            <div className={styles.rating}>No rating</div>
+                            <div className={styles.rating_container}>
+                                <img 
+                                    className={styles.rating_icon} 
+                                    src={star_icon} 
+                                    alt="star_icon" 
+                                    loading='lazy'
+                                />
+                                <div className={styles.rating}>No rating</div>
+                            </div>
+                            {!available ? 
+                                (<div className={styles.available}>Sold out</div>) : null
+                            }
                         </>) :
                         (<>
-                            <img 
-                                className={styles.rating_icon} 
-                                src={star_icon} 
-                                alt="star_icon" 
-                                loading='lazy'
-                            />
-                            <div className={styles.rating}>{rating}</div>
-                            <div className={styles.votes}>{`(${votes} votes)`}</div>
+                            <div className={styles.rating_container}>
+                                <img 
+                                    className={styles.rating_icon} 
+                                    src={star_fill_icon} 
+                                    alt="star_icon" 
+                                    loading='lazy'
+                                />
+                            
+                                <div className={styles.rating}>{rating}</div>
+                                <div className={styles.votes}>{`(${votes} votes)`}</div>
+                            </div>
+                            
+                            {!available ? 
+                                (<div className={styles.available}>Sold out</div>) : null
+                            }
                         </>)
                     }
                 </div>

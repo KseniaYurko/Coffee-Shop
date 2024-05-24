@@ -4,9 +4,13 @@
 
 body {
   margin: 0;
-  font-family: DMSans, Arial;
+  font-family: 'DM Sans';
   background-color: var(--color-background-dark);
   color: var(--color-text);
+  background-image: url('../src/assets/images/bg-cafe.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 50% 0;
 }
 
 code {

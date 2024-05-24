@@ -4,37 +4,41 @@
   align-items: center;
   justify-content: center;
   background-color: var(--color-background-dark);
-  background-image: url('../src//assets//images//bg-cafe.jpg');
+  background-image: url('../src/assets/images/bg-cafe.jpg');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: 50% 0;
+  z-index: 100;
 }
 
 .container {
+  position: absolute;
+  top: 140px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   gap: 10px;
-  margin-top: 100px;
   padding: 100px 125px;
   max-width: 1094px;
   width: 1094px;
-  min-height: 500px;
   border-radius: 10px;
   background-color: var(--color-background);
+  z-index: 300;
+  margin-bottom: 140px;
 }
 
 .header {
-  font-style: normal;
   font-size: 2rem;
+  z-index: 300;
 }
 
 .text {
-  font-style: normal;
+  font-weight: 500;
   font-size: 1rem;
   text-align: center;
   color: var(--color-grey-light);
+  z-index: 300;
 }
 
 .buttons_container {
@@ -57,7 +61,31 @@
   color: var(--color-text);
 }
 
-.button_item:active {
+.button_item:hover {
   background-color: var(--color-grey-light);
 }
 
+.button_item.active {
+  background-color: var(--color-grey-light);
+}
+
+.container_products {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vector {
+  position: absolute;
+  z-index: 100;
+  right: 290px;
+  top: 30px;
+  width: 260px;
+  height: 200px;
+}
+
+.spacer {
+  position: absolute;
+  height: 100px;
+  top: 0;
+}

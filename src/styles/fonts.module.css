@@ -1,7 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
 @font-face {
-    font-family: 'DMSans';
+    font-family: 'DM Sans';
     src: url('../assets/fonts/DMSans/DMSans-Regular.ttf') format('ttf');
-    font-weight: 600;
     font-style: normal;
     font-display: swap;
 }
